@@ -1,35 +1,25 @@
 import streamlit as st
+from langchain_core.messages import HumanMessage,AIMessage,ToolMessage
+import json
 
-class DisplayResult:
-    """
-    Class to handle the display of results in the Streamlit UI.
-    It formats and displays the results based on the type of message received.
-    """
 
-    def __init__(self, usecase, graph, user_message):
-        self.usecase = usecase
+class DisplayResultStreamlit:
+    def __init__(self,usecase,graph,user_message):
+        self.usecase= usecase
         self.graph = graph
         self.user_message = user_message
-    
+
     def display_result_on_ui(self):
-        # Show the user's message in the chat UI
-        st.chat_message("user").write(self.user_message)
-
-        # Prepare the input state for the LangGraph
-        input_state = {"user_input": self.user_message}
-
-        try:
-            # Invoke the graph and get the final state
-            final_state = self.graph.invoke(input_state)
-
-            # Extract the chatbot's response
-            response = final_state.get("response", "❌ No response returned from the chatbot.")
-
-            # Show the assistant's response
-            st.chat_message("assistant").write(response)
-
-        except Exception as e:
-            st.chat_message("assistant").write(f"❌ Error generating response: {e}")
-
-
-             
+        usecase= self.usecase
+        graph = self.graph
+        user_message = self.user_message
+        print(user_message)
+        if usecase =="Basic Chatbot":
+                for event in graph.stream({'messages':("user",user_message)}):
+                    print(event.values())
+                    for value in event.values():
+                        print(value['messages'])
+                        with st.chat_message("user"):
+                            st.write(user_message)
+                        with st.chat_message("assistant"):
+                            st.write(value["messages"].content)
