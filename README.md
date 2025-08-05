@@ -16,7 +16,7 @@ A modular, extensible chatbot framework built using [LangGraph](https://python.l
 ---
 
 ## 🧱 Project Structure
-
+```bash
 LangGraphChatbot/
 │
 ├── app.py                             # 🔹 Entry point to run the Streamlit chatbot app
@@ -29,16 +29,17 @@ LangGraphChatbot/
 │       ├── __init__.py
 │       ├── graph_builder.py           # 🔹 Builds the LangGraph pipeline based on usecase
 │       ├── display_result.py          # 🔹 Handles UI output and response display in Streamlit
+│
 │       ├── state/
 │       │   ├── __init__.py
 │       │   └── state.py               # 🔹 LangGraph state class definition
+│
 │       └── nodes/
 │           ├── __init__.py
 │           └── basic_chatbot_node.py  # 🔹 Basic chatbot node logic
 │
 └── assets/                            # (Optional) Static files, images, logos, etc.
-
-
+```
 
 ---
 
@@ -77,7 +78,7 @@ export GROQ_API_KEY=your_key_here
 
 ---
 
-## 📸 UI Screenshot
-
+## 🙋‍♂️ Author
+- Dhanush R Moolemane
 
 
