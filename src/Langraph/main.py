@@ -28,13 +28,13 @@ def load_langgraph_agenticai_app():
     if user_message:
         try:
             obj_llm_config = GroqLLM(user_controls_input=user_input)
-            model = obj_llm_config.get_model()
+            model = obj_llm_config.get_llm_model()
 
             if not model:
                 st.error("❌ Model configuration failed. Please check your inputs.")
                 return
 
-            usecase = user_input.get("selected_usecase")
+            usecase = user_input.get("usecase")
 
             if not usecase:
                 st.error("❌ Use Case not selected. Please select a valid use case.")
