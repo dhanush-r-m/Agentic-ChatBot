@@ -70,7 +70,7 @@ pip install -r requirements.txt
 ```bash
 streamlit run app.py
 ```
-### Configuration 
+### 5. Configuration 
 
 ```bash
 export GROQ_API_KEY=your_key_here
