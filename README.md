@@ -48,7 +48,7 @@ LangGraphChatbot/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/langgraph-chatbot.git
+git clone https://github.com/dhanush-r-m/Agentic-ChatBot.git
 cd langgraph-chatbot
 ```
 
