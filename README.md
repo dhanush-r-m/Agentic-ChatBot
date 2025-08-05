@@ -49,7 +49,6 @@ LangGraphChatbot/
 
 ```bash
 git clone https://github.com/dhanush-r-m/Agentic-ChatBot.git
-cd langgraph-chatbot
 ```
 
 ### 2. Create a Virtual Environment
